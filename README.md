@@ -49,7 +49,7 @@ A Clean Architecture backend system for managing restaurant operations, built wi
 ### Installation
 
 ```bash
-git clone[ https://github.com/ahmed18837/RestaurantsManagementSystem](https://github.com/sameh-elisha/restaurants-management-system).git
+git clone https://github.com/ahmed18837/RestaurantsManagementSystem.git
 cd RestaurantsManagementSystem
 dotnet restore
 ```
