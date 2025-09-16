@@ -1,12 +1,3 @@
-**.NET Clean Architecture solution**
-
-* **Restaurants.API** → REST API endpoints
-* **Restaurants.Application** → business logic & use cases
-* **Restaurants.Domain** → core entities & interfaces
-* **Restaurants.Infrastructure** → database & external services
-
----
-
 # Restaurants Management System
 
 A Clean Architecture backend system for managing restaurant operations, built with **.NET**.
