@@ -1,172 +1,91 @@
-# restaurants-management-system
-Here’s a suggestion for a README for the **RestaurantsManagementSystem** project. You can edit details (requirements, setup, features) as needed.
+**.NET Clean Architecture solution**
+
+* **Restaurants.API** → REST API endpoints
+* **Restaurants.Application** → business logic & use cases
+* **Restaurants.Domain** → core entities & interfaces
+* **Restaurants.Infrastructure** → database & external services
 
 ---
 
-# Restaurant Management System
+# Restaurants Management System
 
-A .NET solution for managing restaurant operations, including API backend, domain logic, and infrastructure layers.
-
----
-
-## Table of Contents
-
-* [Overview](#overview)
-* [Features](#features)
-* [Architecture](#architecture)
-* [Technologies](#technologies)
-* [Prerequisites](#prerequisites)
-* [Setup & Installation](#setup--installation)
-* [Configuration](#configuration)
-* [Usage](#usage)
-* [Testing](#testing)
-* [Contributing](#contributing)
-* [License](#license)
-
----
-
-## Overview
-
-The **RestaurantsManagementSystem** is intended to provide a clean, maintainable backend system for restaurants — managing menus, orders, tables, possibly staff, etc. It is modularized with a Domain layer, Application layer, Infrastructure layer, and exposes its functionality via an API.
+A Clean Architecture backend system for managing restaurant operations, built with **.NET**.
 
 ---
 
 ## Features
 
-* CRUD operations for entities (Menu Items, Orders, Tables, Staff, etc.)
-* Separation of concerns (domain, application logic, infrastructure)
-* RESTful API endpoints
-* Data persistence via an infrastructure layer
-* Modular and testable code structure
-
-*(Add more features as implemented: authentication, reporting, real-time updates, etc.)*
+* Modular design (Domain, Application, Infrastructure, API).
+* Entity-based architecture (Menus, Orders, etc.).
+* RESTful API endpoints.
+* Extensible and testable codebase.
 
 ---
 
-## Architecture
+## Project Structure
 
-The repository is structured using a layered / clean architecture style:
-
-| Layer              | Responsibility                                              |
-| ------------------ | ----------------------------------------------------------- |
-| **Domain**         | Core business entities, domain logic, interfaces            |
-| **Application**    | Application services, DTOs, business rules, use cases       |
-| **Infrastructure** | Data access implementations, external services, persistence |
-| **API**            | HTTP endpoints, controllers, request/response mapping       |
+* **Restaurants.API** → HTTP endpoints / controllers.
+* **Restaurants.Application** → business logic, services, DTOs.
+* **Restaurants.Domain** → entities, interfaces, core rules.
+* **Restaurants.Infrastructure** → persistence, EF Core, external integrations.
 
 ---
 
 ## Technologies
 
-* C# / .NET (specify version, e.g. .NET 7 or .NET Core 6)
-* (If used) Entity Framework / ORM
-* (If used) SQL Server / PostgreSQL / other database
-* (If used) Dependency Injection
-* (If used) Automapper or similar mapping tools
+* **.NET (C#)**
+* **Entity Framework Core** (assumed)
+* **Clean Architecture principles**
 
 ---
 
-## Prerequisites
+## Getting Started
 
-Make sure you have the following installed:
+### Prerequisites
 
-* .NET SDK (version X.X)
-* A supported database (SQL Server / PostgreSQL / etc.)
-* Environment variables or config files set up
-* (Optional) Docker, if there are containerization files
+* [.NET SDK](https://dotnet.microsoft.com/download) (7.0 or higher recommended)
+* SQL Server / PostgreSQL (configure connection string)
 
----
+### Installation
 
-## Setup & Installation
+```bash
+git clone[ https://github.com/ahmed18837/RestaurantsManagementSystem](https://github.com/sameh-elisha/restaurants-management-system).git
+cd RestaurantsManagementSystem
+dotnet restore
+```
 
-1. Clone the repository
+### Database Setup
 
-   ```bash
-   git clone [https://github.com/ahmed18837/RestaurantsManagementSystem](https://github.com/sameh-elisha/restaurants-management-system).git
-   cd RestaurantsManagementSystem
-   ```
+```bash
+dotnet ef database update --project Restaurants.Infrastructure
+```
 
-2. Restore dependencies
+### Run the API
 
-   ```bash
-   dotnet restore
-   ```
+```bash
+dotnet run --project Restaurants.API
+```
 
-3. Configure database connection string (see [Configuration](#configuration)).
-
-4. Apply migrations / setup database
-
-   ```bash
-   dotnet ef database update --project Restaurants.Infrastructure
-   ```
-
-5. Run the API project
-
-   ```bash
-   dotnet run --project Restaurants.API
-   ```
-
-6. The API should now be available at e.g. `https://localhost:5001` (depending on config)
-
----
-
-## Configuration
-
-Some settings you’ll need to provide / adjust:
-
-* Database connection string
-* Environment (Development / Production)
-* App settings (logging, CORS, etc.)
-* Port / URLs for hosting
-
-You can generally find these in `appsettings.json` / `appsettings.Development.json` or similar config files.
+API will run at:
+`https://localhost:5001` or `http://localhost:5000`
 
 ---
 
 ## Usage
 
-Describe how to call the API endpoints. For example:
+Example endpoints (to be updated with real routes):
 
-| Endpoint           | Method | Description       |
-| ------------------ | ------ | ----------------- |
-| `/api/menus`       | GET    | Get list of menus |
-| `/api/orders`      | POST   | Create new order  |
-| `/api/tables/{id}` | PUT    | Update table info |
-
-*(Fill in actual endpoints once known)*
-
----
-
-## Testing
-
-If there are automated tests:
-
-* How to run unit tests
-
-  ```bash
-  dotnet test
-  ```
-* Any integration tests
-* Code coverage approach
+| Endpoint           | Method | Description      |
+| ------------------ | ------ | ---------------- |
+| `/api/menus`       | GET    | Fetch menu items |
+| `/api/orders`      | POST   | Create an order  |
+| `/api/tables/{id}` | PUT    | Update table     |
 
 ---
 
 ## Contributing
 
-Contributions are welcome! If you want to contribute:
-
 1. Fork the repo
-2. Create a feature branch (`git checkout -b feature/YourFeature`)
-3. Make your changes
-4. Add tests for them, if applicable
-5. Submit a pull request describing what you changed and why
+2. Create a feature branch
+3. Submit a PR
 
----
-
-## License
-
-State the license under which the project is released (e.g. MIT, Apache 2.0). If you haven’t picked one yet, you can add a `LICENSE` file.
-
----
-
-If you like, I can generate a README tailored to exactly the code in the repo (e.g. endpoints, schema) by inspecting it. Do you want me to do that?
